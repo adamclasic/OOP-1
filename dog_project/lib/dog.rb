@@ -18,6 +18,11 @@ class Dog
     def favorite_foods; @favorite_foods end
 
 
+    #arbitry methods
+    def favorite_foods?(str)
+        @favorite_foods.include?(str)
+    end
+
 end
 
 dog1 = Dog.new('spenc', 'german sheprd', 4, "Miaw-Miaw", ['salad', 'chese', 'water'])
