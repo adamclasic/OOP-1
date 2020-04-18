@@ -13,14 +13,14 @@ class Room
     end
 
     def full?
-        if @occupants.length+1 >= @capacity
+        if @occupants.length >= @capacity
             return true
         else
             return false
         end
     end
 
-    def available_spaec
+    def available_space
         a = @occupants.length
         r = @capacity-a
         r
@@ -32,7 +32,7 @@ class Room
             false
         else
             @occupants << @name
-            true
+            return true
         end
     end
 
@@ -41,7 +41,8 @@ end
 
 # roo1 = Room.new(3)
 # roo1.add_occupant('adam')
-# roo1.add_occupant('djazo')
+# p roo1.add_occupant('djazo')
 # p roo1.add_occupant('samah')
+# p roo1.add_occupant('ihab')
 # p roo1.occupants
-# p roo1.available_spaec
+# p roo1.available_space
