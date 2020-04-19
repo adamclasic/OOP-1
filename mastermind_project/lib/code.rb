@@ -33,6 +33,9 @@ class Code
     Code.new(str.split(''))
   end
 
+  def [](index); @pegs[index] end
+  def length; @pegs.length end
+
 end
 
 
