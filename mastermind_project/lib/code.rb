@@ -28,6 +28,11 @@ class Code
     num.times { arr <<  POSSIBLE_PEGS.keys[rand(POSSIBLE_PEGS.length)] }
     Code.new(arr)  
   end
+
+  def self.from_string(str)
+    Code.new(str.split(''))
+  end
+
 end
 
 
