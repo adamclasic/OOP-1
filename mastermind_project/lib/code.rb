@@ -58,15 +58,3 @@ class Code
   end
 
 end
-
-
-# cla = Code.new(['b', 'b', 'y'])
-# p Code.valid_pegs?(['B', 'R', 'R'])
-# p cla.pegs
-p Code.random(32)
-
-
-# %w(jas jj ls fj).
-# a = rand(10)
-# p a
-# p a.class
