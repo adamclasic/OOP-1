@@ -19,8 +19,6 @@ class Code
     end
   end
 
-  # def hid; @@pegs = @pegs end
-
   attr_reader :pegs
 
   def self.random(num)
@@ -35,6 +33,29 @@ class Code
 
   def [](index); @pegs[index] end
   def length; @pegs.length end
+
+  def num_exact_matches(code_instance)
+    match = 0
+    (0...code_instance.length).each do |i|
+      match += 1 if code_instance[i] == @pegs[i]
+      i += 1
+    end
+    match
+  end
+
+  def num_near_matches(code_instance)
+    match = 0
+
+    (0...code_instance.length).each do |i|
+      match += 1 if @pegs.include?(code_instance[i])
+      i += 1
+    end
+    match - num_exact_matches(code_instance)
+  end
+
+  def ==(code_instance)
+    code_instance == @pegs ? true : false
+  end
 
 end
 
